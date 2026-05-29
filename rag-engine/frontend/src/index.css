@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@200;300;400;500;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #080a0f;
+  --bg2: #0d1117;
+  --surface: #111620;
+  --border: #1e2530;
+  --accent: #00e5ff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: #e2e8f0;
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #1e2530; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #00e5ff33; }
+
+/* SSE streaming cursor */
+.streaming-cursor::after {
+  content: '▋';
+  animation: blink 0.7s infinite;
+  color: #00e5ff;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+/* Citation badges */
+.citation-badge {
+  display: inline;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  background: rgba(245,158,11,0.12);
+  color: #f59e0b;
+  border: 1px solid rgba(245,158,11,0.25);
+  padding: 1px 5px;
+  border-radius: 2px;
+  margin: 0 2px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.citation-badge:hover { background: rgba(245,158,11,0.22); }
